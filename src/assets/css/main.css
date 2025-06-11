@@ -3927,7 +3927,7 @@ video {
 }
 
 .bg-competetionInPlayUpComingBg {
-  background-image: var(--color-bg-gradient);
+  background: #257b23;
 }
 
 .bg-editStakesGrd {
@@ -3946,7 +3946,7 @@ video {
 }
 
 .bg-inPlayBlockBg {
-  background: var(--color-bg-gradient);
+  background: #257b23;
 }
 
 .bg-maxBtnGrd {
@@ -5988,10 +5988,7 @@ textarea {
 }
 
 .app-bg {
-  background-color: #eceaea;
-  background-position: start;
-  background-repeat: repeat;
-  background-size: 300%;
+  background: url("../images/bg.png");
 }
 
 input:focus {

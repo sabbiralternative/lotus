@@ -10,8 +10,6 @@ import LoggedIn from "./LoggedIn";
 import UnAuthorized from "./UnAuthorized";
 import { userToken } from "../../../redux/features/auth/authSlice";
 import useBalance from "../../../hooks/useBalance";
-import LeftDeskSidebar from "../mobile/LeftDeskSidebar/LeftDeskSidebar";
-import RightDeskSidebar from "../mobile/RightDeskSidebar/RightDeskSidebar";
 import useBonusBalance from "../../../hooks/useBonusBalance";
 import moment from "moment";
 import { useEffect, useState } from "react";
@@ -409,11 +407,9 @@ cursor-pointer
                 </div>
               </div>
             </div>
-
-            <LeftDeskSidebar />
-            <RightDeskSidebar />
           </div>
         </header>
+        {/* <RightDeskSidebar /> */}
       </div>
     </>
   );

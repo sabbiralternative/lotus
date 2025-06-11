@@ -90,7 +90,7 @@ const Login = () => {
     >
       <div
         ref={loginRef}
-        className="z-2 popUpBoxShadow popUpOpenAnimation absolute w-[90%] sm:w-[85%] md:w-[70%] lg:w-[450px] rounded-[5px] bg-bg_Quaternary p-2 xs:p-5 rounded-md bg-login"
+        className="z-2 popUpBoxShadow popUpOpenAnimation absolute w-[90%] sm:w-[85%] md:w-[70%] lg:w-[400px] rounded-[5px] bg-bg_Quaternary p-10 xs:p-5 rounded-md bg-login"
       >
         <div
           onClick={() => dispatch(setShowLoginModal(false))}
@@ -146,6 +146,7 @@ const Login = () => {
               <img style={{ height: "45px" }} src={logo} alt="logo" />
             </div>
             <form
+              autoComplete="off"
               onSubmit={handleSubmit(onSubmit)}
               className="w-full gap-y-4 flex flex-col"
             >
@@ -156,6 +157,7 @@ const Login = () => {
                     id="mobile-no-input"
                     className="px-2 block w-full focus:outline-none w-full font-lato bg-transparent text-text_Quaternary1 pr-2 text-sm xs:text-md"
                     placeholder="Username/Mobile no."
+                    autoComplete="new-username"
                   />
                   <span className="h-fit"> </span>
                 </div>
@@ -169,9 +171,10 @@ const Login = () => {
                     <input
                       {...register("password", { required: true })}
                       id="password-input"
-                      className="block w-full focus:outline-none w-full pr-2 rounded-none text-text_Quaternary1 bg-transparent text-sm xs:text-md"
+                      className="px-2 block w-full focus:outline-none w-full pr-2 rounded-none text-text_Quaternary1 bg-transparent text-sm xs:text-md"
                       placeholder="Password"
                       type={passwordType ? "password" : "text"}
+                      autoComplete="new-password"
                     />
                     <span
                       style={{ cursor: "pointer" }}

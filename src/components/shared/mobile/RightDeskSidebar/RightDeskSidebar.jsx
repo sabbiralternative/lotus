@@ -67,7 +67,7 @@ const RightDeskSidebar = () => {
     <>
       {showReferral && <Referral setShowReferral={setShowReferral} />}
       <div
-        className={`fixed top-0 left-0 z-50 w-full h-dvh bg-opacity-50 block primary-icon-color`}
+        className={`fixed top-0 left-0 z-[99999] w-full h-dvh bg-opacity-50 block primary-icon-color`}
         style={{ visibility: `${showRightSidebar ? "visible" : "hidden"}` }}
       ></div>
       <div className="undefined">
@@ -75,7 +75,7 @@ const RightDeskSidebar = () => {
           ref={rightDeskSidebar}
           className={`fixed transition-all ease-in-out duration-300 ${
             showRightSidebar ? "translate-x-0" : "translate-x-full"
-          } origin-left top-0 right-0 z-50 w-[70%] max-w-sm h-full overflow-y-auto bg-bg_Quaternary shadow-lg`}
+          } origin-left top-0 right-0 z-[9999] w-[70%] max-w-sm h-full overflow-y-auto bg-bg_Quaternary shadow-lg`}
         >
           <ul
             style={{

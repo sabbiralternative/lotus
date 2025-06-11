@@ -3930,7 +3930,7 @@ video {
 }
 
 .bg-competetionInPlayUpComingBg {
-  background-image: var(--color-bg-gradient);
+  background: #257b23;
 }
 
 .bg-editStakesGrd {
@@ -6026,12 +6026,12 @@ textarea {
   font-family: Manrope;
 }
 
-.app-bg {
+/* .app-bg {
   background-color: #eceaea;
   background-position: start;
   background-repeat: repeat;
   background-size: 300%;
-}
+} */
 
 input:focus {
   outline: none;

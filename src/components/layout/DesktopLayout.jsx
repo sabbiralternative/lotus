@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../shared/Header/Header";
 import Footer from "../shared/Footer/Footer";
 import { useSelector } from "react-redux";
+import RightDeskSidebar from "../shared/mobile/RightDeskSidebar/RightDeskSidebar";
 
 const MainLayout = () => {
   const { showNotification } = useSelector((state) => state.state);
@@ -18,16 +19,19 @@ const MainLayout = () => {
     }
   };
   return (
-    <div className="w-full flex flex-col app-bg h-[100%] ">
-      <Header />
-      <div
-        className={calculatePadding()}
-        style={{ minHeight: "calc(-110px + 100dvh)" }}
-      >
-        <Outlet />
+    <>
+      <RightDeskSidebar />
+      <div className={`w-full flex flex-col app-bg h-[100%] `}>
+        <Header />
+        <div
+          className={calculatePadding()}
+          style={{ minHeight: "calc(-110px + 100dvh)" }}
+        >
+          <Outlet />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 

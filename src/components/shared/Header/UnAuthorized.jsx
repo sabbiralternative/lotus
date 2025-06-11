@@ -41,7 +41,7 @@ const UnAuthorized = ({ setShowMobileSearch, showMobileSearch }) => {
           <div
             onClick={() => setShowMobileSearch(true)}
             id="mobileSearchIcon"
-            className="md:hidden mr-[2px] flex items-center justify-center cursor-pointer"
+            className="md:hidden mr-[2px] flex items-center justify-center cursor-pointer w-full"
           >
             <span className="bg-none border-none shadow-none px-1">
               <svg
@@ -149,7 +149,7 @@ const UnAuthorized = ({ setShowMobileSearch, showMobileSearch }) => {
             <button
               onClick={() => dispatch(setShowLoginModal(true))}
               id="loginButton"
-              className="flex rounded-full border border-quaternary hover:opacity-100 w-max font-extrabold items-center justify-center px-4 py-2 bg-bg_Secondary"
+              className="flex rounded-full   w-max font-extrabold items-center justify-center px-4 py-2 "
             >
               <span className="text-x text-text_Quaternary font-lato md:font-semibold xs:text-xs md:text-sm font-[800]">
                 {languageValue(valueByLanguage, LanguageKey.LOGIN)}

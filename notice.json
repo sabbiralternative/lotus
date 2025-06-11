@@ -10,7 +10,7 @@
       "siteUrl": "Biglotus365.com",
       "interval": "600",
       "casino": "aura",
-      "registration": true,
+      "registration": false,
       "registrationWhatsapp": true,
       "forceLogin": false,
       "demoLogin": true,
@@ -26,7 +26,7 @@
       "bookmakerCashOut": true,
       "referral": true,
       "b2c": true,
-      "language": true,
+      "language": false,
       "logo": {
         "height": 55,
         "width": 125,

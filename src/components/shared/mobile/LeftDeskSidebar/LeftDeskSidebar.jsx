@@ -113,9 +113,9 @@ const LeftDeskSidebar = () => {
           <div className="undefined">
             <div
               ref={leftSidebarRef}
-              className={`fixed transition-all ease-in-out ${
+              className={`fixed transition-all  ${
                 showLeftSidebar ? "openDrawer" : "closeDrawer"
-              }  origin-left top-0 left-0  z-50 w-[70%] max-w-sm h-full overflow-y-auto bg-bg_Quaternary shadow-lg `}
+              }  origin-left top-0 left-0  z-50 w-[60%] max-w-sm h-full overflow-y-auto bg-bg_Quaternary  `}
             >
               <ul
                 style={{ paddingLeft: "0px" }}
