@@ -5,18 +5,18 @@
   },
   "result": {
     "settings": {
-      "otp": true,
+      "otp": false,
       "siteTitle": "lotus365",
-      "siteUrl": "Biglotus365.com",
+      "siteUrl": "magicwin.zip",
       "interval": "600",
       "casino": "aura",
       "registration": false,
-      "registrationWhatsapp": true,
+      "registrationWhatsapp": false,
       "forceLogin": false,
-      "demoLogin": true,
-      "deposit": true,
-      "apkLink": "https://11xgame.vip/11xgame.apk",
-      "withdraw": true,
+      "demoLogin": false,
+      "deposit": false,
+      "apkLink": null,
+      "withdraw": false,
       "disabledDevtool": false,
       "casinoCurrency": "INR",
       "mac88": true,
@@ -24,7 +24,7 @@
       "balanceApiLoop": false,
       "betFairCashOut": true,
       "bookmakerCashOut": true,
-      "referral": true,
+      "referral": false,
       "b2c": true,
       "language": false,
       "logo": {
@@ -34,7 +34,7 @@
       },
       "baseUrl": "",
       "build": "development",
-      "betDelay": true
+      "betDelay": false
     },
 
     "endpoint": {

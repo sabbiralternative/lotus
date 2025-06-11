@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import assets from "../../../../assets";
 import Score from "../../desktop/Home/Score";
 
-const SingleGroup = ({ data, filterData, title }) => {
+const SingleGroup = ({ data, filterData, title, cricket }) => {
   const { group } = useSelector((state) => state.state);
   const eventName = { 4: "Cricket", 2: "Tennis", 1: "Football", 5: "Kabbadi" };
   const navigate = useNavigate();
@@ -19,7 +19,13 @@ const SingleGroup = ({ data, filterData, title }) => {
         <div className="w-full mt-[15px] px-2">
           <div title="In Play" className="w-full">
             <div className="w-full font-helvetica-neue">
-              <div className="w-full flex items-center justify-between rounded-t-[3px] py-1.5 px-[7px] bg-competetionInPlayUpComingBg">
+              <div
+                className={`w-full flex items-center justify-between rounded-t-[3px] py-1.5 px-[7px]  ${
+                  title === "In Play"
+                    ? "bg-competetionInPlayUpComingBg"
+                    : "bg-[#cc5f36]"
+                }`}
+              >
                 <div className="flex items-center text-text_Quaternary font-semibold text-[18px] tracking-wide justify-start w-full gap-[5px]">
                   {title === "In Play" ? (
                     <svg
@@ -72,7 +78,9 @@ const SingleGroup = ({ data, filterData, title }) => {
                 <div className="eventHeadName grid grid-cols-12">
                   <div className="text-text_Ternary px-2 h-full py-2.5 col-span-6 lg:col-span-5 pl-2 flex items-center justify-start w-full gap-x-2">
                     <span>
-                      {group === 4 && <img src={assets.cricket} alt="" />}
+                      {group === 4 || cricket ? (
+                        <img src={assets.cricket} alt="" />
+                      ) : null}
                       {group === 2 && <img src={assets.tennis} alt="" />}
                       {group === 1 && <img src={assets.football} alt="" />}
                       {group === 5 && (
@@ -80,7 +88,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                       )}
                     </span>
                     <div className="text-text_Ternary md:text-[18px] text-base font-semibold leading-3 tracking-wide text-center">
-                      {eventName[group]}
+                      {cricket ? eventName[4] : eventName[group]}
                     </div>
                   </div>
                   <div className="col-span-6 py-2.5 lg:col-span-7 grid grid-cols-12 h-full">
@@ -106,7 +114,11 @@ const SingleGroup = ({ data, filterData, title }) => {
                               id="inPlayTime"
                               className="flex text-selection-none items-center justify-center flex-col col-span-2 pl-[2px] pr-[2px] min-h-9 active:scale-[94%] transition-all ease-in-out duration-100"
                             >
-                              <Score data={data} group={group} keys={keys} />
+                              <Score
+                                data={data}
+                                group={cricket ? 4 : group}
+                                keys={keys}
+                              />
                             </span>
                             <span
                               id="inPlayTeamName"
@@ -149,7 +161,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                           ) : (
                             <span
                               onClick={() => navigateGameList(keys)}
-                              className="col-span-6 h-12 lg:col-span-7 w-full overflow-auto border-t border-borderColorOfMarket"
+                              className="col-span-6 h-12 lg:col-span-7 w-full overflow-auto border-t border-borderColorOfMarket font-lato"
                             >
                               <div
                                 className="w-full overflow-x-auto flex h-full sm:px-[2px]"
@@ -161,7 +173,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                       <div className="overflow-hidden relative opacity-100 cursor-pointer active:scale-95 w-full h-full px-1 py-[1px] rounded-sm flex flex-col items-center justify-center bg-bg_BackBtnBg border border-backBtn undefined">
                                         <span
                                           id="oddBtnPrice"
-                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-sm md:text-[15px] font-semibold"
+                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
                                         >
                                           {
                                             data[keys]?.[0]?.ex
@@ -172,7 +184,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                           id="oddBtnSize"
                                           className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                                         >
-                                          <span className="w-max break-all truncate">
+                                          <span className="w-max break-all truncate text-[9px]">
                                             {
                                               data[keys]?.[0]?.ex
                                                 ?.availableToBack[0]?.size
@@ -196,7 +208,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                       >
                                         <span
                                           id="oddBtnPrice"
-                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-sm md:text-[15px] font-semibold"
+                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px]  font-semibold"
                                         >
                                           {data[keys]?.[2]?.ex
                                             ?.availableToBack[0]?.price || "-"}
@@ -205,7 +217,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                           id="oddBtnSize"
                                           className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                                         >
-                                          <span className="w-max break-all truncate">
+                                          <span className="w-max break-all truncate text-[9px]">
                                             {" "}
                                             {
                                               data[keys]?.[2]?.ex
@@ -221,7 +233,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                       <div className="overflow-hidden relative opacity-100 cursor-pointer active:scale-95 w-full h-full px-1 py-[1px] rounded-sm flex flex-col items-center justify-center bg-bg_BackBtnBg border border-backBtn undefined">
                                         <span
                                           id="oddBtnPrice"
-                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-sm md:text-[15px] font-semibold"
+                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
                                         >
                                           {
                                             data[keys]?.[1]?.ex
@@ -232,7 +244,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                           id="oddBtnSize"
                                           className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                                         >
-                                          <span className="w-max break-all truncate">
+                                          <span className="w-max break-all truncate text-[9px]">
                                             {
                                               data[keys]?.[1]?.ex
                                                 ?.availableToBack[0]?.size
@@ -249,7 +261,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                       <div className="overflow-hidden relative opacity-100 cursor-pointer active:scale-95 w-full h-full px-1 py-[1px] rounded-sm flex flex-col items-center justify-center bg-bg_LayBtnBg border border-layBtn undefined">
                                         <span
                                           id="oddBtnPrice"
-                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-sm md:text-[15px] font-semibold"
+                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
                                         >
                                           {
                                             data[keys]?.[0]?.ex
@@ -260,7 +272,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                           id="oddBtnSize"
                                           className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                                         >
-                                          <span className="w-max break-all truncate">
+                                          <span className="w-max break-all truncate text-[9px]">
                                             {
                                               data[keys]?.[0]?.ex
                                                 ?.availableToLay[0]?.size
@@ -275,7 +287,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                       <div className="overflow-hidden relative opacity-100 cursor-pointer active:scale-95 w-full h-full px-1 py-[1px] rounded-sm flex flex-col items-center justify-center bg-bg_LayBtnBg border border-layBtn undefined">
                                         <span
                                           id="oddBtnPrice"
-                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-sm md:text-[15px] font-semibold"
+                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
                                         >
                                           {
                                             data[keys]?.[2]?.ex
@@ -286,7 +298,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                           id="oddBtnSize"
                                           className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                                         >
-                                          <span className="w-max break-all truncate">
+                                          <span className="w-max break-all truncate text-[9px]">
                                             {
                                               data[keys]?.[2]?.ex
                                                 ?.availableToLay[0]?.size
@@ -301,7 +313,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                       <div className="overflow-hidden relative opacity-100 cursor-pointer active:scale-95 w-full h-full px-1 py-[1px] rounded-sm flex flex-col items-center justify-center bg-bg_LayBtnBg border border-layBtn undefined">
                                         <span
                                           id="oddBtnPrice"
-                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-sm md:text-[15px] font-semibold"
+                                          className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px]  font-semibold"
                                         >
                                           {
                                             data[keys]?.[1]?.ex
@@ -312,7 +324,7 @@ const SingleGroup = ({ data, filterData, title }) => {
                                           id="oddBtnSize"
                                           className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                                         >
-                                          <span className="w-max break-all truncate">
+                                          <span className="w-max break-all truncate text-[9px]">
                                             {
                                               data[keys]?.[1]?.ex
                                                 ?.availableToLay[0]?.size

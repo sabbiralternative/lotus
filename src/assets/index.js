@@ -43,8 +43,42 @@ import logo from "./images/logo.png";
 import telegram from "./images/telegram.png";
 import instagram from "./images/instagram.png";
 import bg from "./images/bg.png";
+import cricket_bg from "./images/cricket-bg.png";
+import tennis_bg from "./images/tennis-bg.png";
+import football_bg from "./images/football-bg.png";
+import greyhound_bg from "./images/greyhound-bg.png";
+import horse_bg from "./images/horse-bg.png";
+import aura_bg from "./images/aurabg.png";
+import cardgames_quick_bg from "./images/cardgames-quick-bg.png";
+import e_cricket_quick_bg from "./images/e-cricket-quick-bg.png";
+import evolution_quick_bg from "./images/evolution-quick-bg.png";
+import fishinggames_quick_bg from "./images/fishinggames-quick-bg.png";
+import fortunebg from "./images/fortunebg.jpg";
+import livecasino_quick_bg from "./images/livecasino-quick-bg.png";
+import multiplayer_quick_bg from "./images/multiplayer-quick-bg.png";
+import slot_quick_bg from "./images/slot-quick-bg.png";
+import sportsbook_quick_bg from "./images/sportsbook-quick-bg.png";
+import userIcon from "./images/toolbar-user-icon.c398950b.svg";
+import election from "./images/election-icon.1be45f54.svg";
 
 export default {
+  election,
+  userIcon,
+  aura_bg,
+  cardgames_quick_bg,
+  e_cricket_quick_bg,
+  evolution_quick_bg,
+  fishinggames_quick_bg,
+  fortunebg,
+  livecasino_quick_bg,
+  multiplayer_quick_bg,
+  slot_quick_bg,
+  sportsbook_quick_bg,
+  cricket_bg,
+  tennis_bg,
+  football_bg,
+  greyhound_bg,
+  horse_bg,
   bg,
   logo,
   commision,

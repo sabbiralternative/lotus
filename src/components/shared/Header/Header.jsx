@@ -18,7 +18,7 @@ import SearchBox from "./SearchBox";
 import MobileSearch from "./MobileSearch";
 // import { MobileView, isMobile } from "react-device-detect";
 import AppPopup from "./AppPopUp";
-import MobileHeader from "./MobileHeader";
+// import MobileHeader from "./MobileHeader";
 import useLanguage from "../../../hooks/useLanguage";
 import { LanguageKey } from "../../../const";
 import { languageValue } from "../../../utils/language";
@@ -237,10 +237,10 @@ cursor-pointer
                   />
                 )}
               </div>
-              <MobileHeader />
+              {/* <MobileHeader /> */}
               <div className="hidden lg:block">
-                <div className="flex w-full overflow-y-auto no-scrollbar gap-0.5 bg-bg_Quaternary items-center p-1 justify-center ">
-                  {/* <button className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenuHover ">
+                <div className="flex w-full overflow-y-auto no-scrollbar gap-3 bg-bg_Quaternary items-center p-1 justify-center  headerDeskNav-content__list">
+                  {/* <button className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenuHover ">
                   <span className="font font-lato text-[12px]">SportsBook</span>
                 </button> */}
                   <button
@@ -248,7 +248,7 @@ cursor-pointer
                       navigate("/");
                       dispatch(setGroupType(4));
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu list-item relative"
                   >
                     <span className="font font-lato text-[12px]">
                       {" "}
@@ -260,7 +260,7 @@ cursor-pointer
                       navigate("/");
                       dispatch(setGroupType(1));
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu list-item relative"
                   >
                     <span className="font font-lato text-[12px]">
                       {" "}
@@ -273,7 +273,7 @@ cursor-pointer
                       navigate("/");
                       dispatch(setGroupType(2));
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu list-item relative"
                   >
                     <span className="font font-lato text-[12px]">
                       {languageValue(valueByLanguage, LanguageKey.TENNIS)}
@@ -284,7 +284,7 @@ cursor-pointer
                       navigate("/");
                       dispatch(setGroupType(5));
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu list-item relative"
                   >
                     <span className="font font-lato text-[12px]">
                       {languageValue(valueByLanguage, LanguageKey.KABADDI)}
@@ -294,7 +294,7 @@ cursor-pointer
                     onClick={() => {
                       navigate("/horse-racing");
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu list-item relative"
                   >
                     <span className="font font-lato text-[12px]">
                       {languageValue(valueByLanguage, LanguageKey.HORSE)}
@@ -304,19 +304,19 @@ cursor-pointer
                     onClick={() => {
                       navigate("/greyhound-racing");
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu list-item relative"
                   >
                     <span className="font font-lato text-[12px]">
                       {languageValue(valueByLanguage, LanguageKey.GREYHOUND)}
                     </span>
                   </button>
 
-                  {/* <button className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu ">
+                  {/* <button className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu ">
                   <span className="font font-lato text-[12px]">
                     Horse Racing
                   </span>
                 </button> */}
-                  {/* <button className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu ">
+                  {/* <button className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu ">
                   <span className="font font-lato text-[12px]">
                     GreyHound Racing
                   </span>
@@ -326,7 +326,7 @@ cursor-pointer
                       onClick={() => {
                         navigate("/mac88");
                       }}
-                      className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu "
+                      className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu list-item relative"
                     >
                       <span className="font font-lato text-[12px]">
                         {languageValue(valueByLanguage, LanguageKey.MAC88)}
@@ -339,7 +339,7 @@ cursor-pointer
                         navigate("/");
                         dispatch(setGroupType("auraWolf"));
                       }}
-                      className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu "
+                      className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu list-item relative"
                     >
                       <span className="font font-lato text-[12px]">Aura</span>
                     </button>
@@ -349,7 +349,7 @@ cursor-pointer
                       navigate("/");
                       dispatch(setGroupType("liveCasinoWolf"));
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu  "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu  "
                   >
                     <span className="font font-lato text-[12px]">
                       Live Casino
@@ -360,7 +360,7 @@ cursor-pointer
                       navigate("/");
                       dispatch(setGroupType("slotWolf"));
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu "
                   >
                     <span className="font font-lato text-[12px]">
                       Slot Games
@@ -370,7 +370,7 @@ cursor-pointer
                     onClick={() => {
                       navigate("/live-casino");
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu  "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu  list-item relative"
                   >
                     <span className="font font-lato text-[12px]">
                       {languageValue(valueByLanguage, LanguageKey.LIVE_CASINO)}
@@ -380,7 +380,7 @@ cursor-pointer
                     onClick={() => {
                       navigate("/slots");
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu  "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu  list-item relative"
                   >
                     <span className="font font-lato text-[12px]">Slots</span>
                   </button>
@@ -388,7 +388,7 @@ cursor-pointer
                     onClick={() => {
                       navigate("/crash-games");
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu  "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu  list-item relative"
                   >
                     <span className="font font-lato text-[12px]">
                       Crash Games
@@ -398,7 +398,7 @@ cursor-pointer
                     onClick={() => {
                       navigate("/fishing-games");
                     }}
-                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9  border  w-max px-3  py-1 text-text_HeaderDeskNavMenu  "
+                    className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu  list-item relative"
                   >
                     <span className="font font-lato text-[12px]">
                       Fishing Games

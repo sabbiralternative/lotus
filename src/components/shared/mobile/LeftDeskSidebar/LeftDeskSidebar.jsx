@@ -12,15 +12,16 @@ import { useNavigate } from "react-router-dom";
 import assets from "../../../../assets";
 import toast from "react-hot-toast";
 import WarningCondition from "../../WarningCondition/WarningCondition";
-import useGetSocialLink from "../../../../hooks/useGetSocialLink";
+// import useGetSocialLink from "../../../../hooks/useGetSocialLink";
 import useLanguage from "../../../../hooks/useLanguage";
 import { languageValue } from "../../../../utils/language";
 import { LanguageKey } from "../../../../const";
+import { FaRegEye } from "react-icons/fa";
 
 const LeftDeskSidebar = () => {
   const { valueByLanguage } = useLanguage();
   const [hideNavList, setHideNavList] = useState("");
-  const { socialLink } = useGetSocialLink();
+  // const { socialLink } = useGetSocialLink();
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [showWarning, setShowWarning] = useState(false);
@@ -34,7 +35,9 @@ const LeftDeskSidebar = () => {
   });
 
   const handleNavigate = (group) => {
-    dispatch(setGroupType(group));
+    if (group) {
+      dispatch(setGroupType(group));
+    }
     dispatch(setShowLeftSidebar(false));
     navigate("/");
     window.scrollTo(0, 0);
@@ -53,19 +56,19 @@ const LeftDeskSidebar = () => {
     }
   };
 
-  const handleOpenSocialLink = (link) => {
-    if (link) {
-      window.open(link, "_blank");
-    }
-  };
+  // const handleOpenSocialLink = (link) => {
+  //   if (link) {
+  //     window.open(link, "_blank");
+  //   }
+  // };
 
-  const openWhatsapp = () => {
-    if (token && socialLink?.branchWhatsapplink) {
-      window.open(socialLink?.branchWhatsapplink, "_blank");
-    } else {
-      window.open(socialLink?.whatsapplink, "_blank");
-    }
-  };
+  // const openWhatsapp = () => {
+  //   if (token && socialLink?.branchWhatsapplink) {
+  //     window.open(socialLink?.branchWhatsapplink, "_blank");
+  //   } else {
+  //     window.open(socialLink?.whatsapplink, "_blank");
+  //   }
+  // };
 
   useEffect(() => {
     if (showLeftSidebar) {
@@ -126,10 +129,53 @@ const LeftDeskSidebar = () => {
                 }`}
               >
                 <li
+                  onClick={() => handleNavigate()}
+                  className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
+                >
+                  <span className="w-5 h-auto xs:w-4">
+                    <FaRegEye />
+                  </span>
+                  <span className="font-medium text-sm xs:text-base">
+                    My Market
+                  </span>
+                </li>
+                <li
+                  onClick={handleNavigateToAviator}
+                  className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
+                >
+                  <span className="w-5 h-auto xs:w-4">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 64 64"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M10.2208 25.2081C8.58995 23.849 8.72593 21.3034 10.4923 20.1258L22.5839 12.7529L30.5466 12.458L39.7792 6.91839C46.1332 3.10599 53.757 2.0196 60.923 3.90539C62.9758 10.2502 62.0646 17.1819 58.4418 22.7807L51.1908 33.9869L50.6009 42.2446L42.3433 54.3361C41.4141 55.0795 40.1911 55.3464 39.0367 55.0578L38.8483 55.0107C38.6265 54.9553 38.424 54.8406 38.2623 54.6789L37.9195 54.3361L32.611 45.7836L26.1229 46.6683L21.1093 41.6547L16.6855 36.9361L17.8652 30.153L10.4923 25.4343L10.2208 25.2081ZM52.9603 19.2411C52.9603 23.4759 49.5273 26.9089 45.2925 26.9089C41.0576 26.9089 37.6246 23.4759 37.6246 19.2411C37.6246 15.0062 41.0576 11.5732 45.2925 11.5732C49.5273 11.5732 52.9603 15.0062 52.9603 19.2411ZM17.376 44.2883L2 58.9329L4.01489 61.0484L19.3909 46.4039L17.376 44.2883ZM10.2577 58.9316L21.2972 48.4172L23.3121 50.5327L12.2725 61.0471L10.2577 58.9316ZM13.0396 40.1595L2 50.6739L4.01489 52.7894L15.0545 42.275L13.0396 40.1595Z"
+                        fill="#c10931"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span className="font-medium text-sm xs:text-base">
+                    Blastoff
+                  </span>
+                </li>
+                <li className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer">
+                  <span className="w-5 h-auto xs:w-4">
+                    <img src={assets.election} alt="" />
+                  </span>
+                  <span className="font-medium text-sm xs:text-base">
+                    Election
+                  </span>
+                </li>
+                <li
                   onClick={() => handleNavigate(4)}
                   className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                 >
-                  <span className="w-3 h-auto xs:w-4">
+                  <span className="w-5 h-auto xs:w-4">
                     <svg
                       width="19"
                       height="18"
@@ -158,7 +204,7 @@ const LeftDeskSidebar = () => {
                   onClick={() => handleNavigate(1)}
                   className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                 >
-                  <span className="w-3 h-auto xs:w-4">
+                  <span className="w-5 h-auto xs:w-4">
                     <svg
                       width="19"
                       height="19"
@@ -220,7 +266,7 @@ const LeftDeskSidebar = () => {
                   onClick={() => handleNavigate(2)}
                   className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                 >
-                  <span className="w-3 h-auto xs:w-4">
+                  <span className="w-5 h-auto xs:w-4">
                     <svg
                       width="20"
                       height="20"
@@ -246,17 +292,7 @@ const LeftDeskSidebar = () => {
                     {languageValue(valueByLanguage, LanguageKey.TENNIS)}
                   </span>
                 </li>
-                <li
-                  onClick={() => handleNavigate(5)}
-                  className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-2 cursor-pointer"
-                >
-                  <span className="">
-                    <img className="size-5" src={assets.kabbadi} alt="" />
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    {languageValue(valueByLanguage, LanguageKey.KABADDI)}
-                  </span>
-                </li>
+
                 <li
                   onClick={() => {
                     navigate("/horse-racing");
@@ -264,7 +300,7 @@ const LeftDeskSidebar = () => {
                   }}
                   className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                 >
-                  <span className="w-3 h-auto xs:w-4">
+                  <span className="w-5 h-auto xs:w-4">
                     <svg
                       width="15"
                       height="16"
@@ -289,7 +325,7 @@ const LeftDeskSidebar = () => {
                   }}
                   className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                 >
-                  <span className="w-3 h-auto xs:w-4">
+                  <span className="w-5 h-auto xs:w-4">
                     <svg
                       width="15"
                       height="16"
@@ -307,6 +343,19 @@ const LeftDeskSidebar = () => {
                     {languageValue(valueByLanguage, LanguageKey.GREYHOUND)}
                   </span>
                 </li>
+                <li
+                  onClick={() => {
+                    dispatch(setShowLeftSidebar(false));
+                  }}
+                  className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
+                >
+                  <span className="w-5 h-auto xs:w-4">
+                    <img src={assets.sportsBook} alt="" />
+                  </span>
+                  <span className="font-medium text-sm xs:text-base">
+                    Sportsbook (80+)
+                  </span>
+                </li>
 
                 {settings.casinoCurrency === "INR" && settings.mac88 && (
                   <li
@@ -316,7 +365,7 @@ const LeftDeskSidebar = () => {
                     }}
                     className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                   >
-                    <span className="w-3 h-auto xs:w-4">
+                    <span className="w-5 h-auto xs:w-4">
                       <svg
                         width="15"
                         height="16"
@@ -341,7 +390,7 @@ const LeftDeskSidebar = () => {
                     onClick={() => handleNavigate("auraWolf")}
                     className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                   >
-                    <span className="w-3 h-auto xs:w-4">
+                    <span className="w-5 h-auto xs:w-4">
                       <svg
                         width="15"
                         height="16"
@@ -368,7 +417,7 @@ const LeftDeskSidebar = () => {
                   }}
                   className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                 >
-                  <span className="w-3 h-auto xs:w-4">
+                  <span className="w-5 h-auto xs:w-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="15"
@@ -434,7 +483,7 @@ const LeftDeskSidebar = () => {
                   }}
                   className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                 >
-                  <span className="w-3 h-auto xs:w-4">
+                  <span className="w-5 h-auto xs:w-4">
                     <svg
                       width="16"
                       height="16"
@@ -472,7 +521,7 @@ const LeftDeskSidebar = () => {
                   }}
                   className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                 >
-                  <span className="w-3 h-auto xs:w-4">
+                  <span className="w-5 h-auto xs:w-4">
                     <svg
                       width="16"
                       height="16"
@@ -500,7 +549,7 @@ const LeftDeskSidebar = () => {
                   }}
                   className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                 >
-                  <span className="w-3 h-auto xs:w-4">
+                  <span className="w-5 h-auto xs:w-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -524,36 +573,12 @@ const LeftDeskSidebar = () => {
                   </span>
                 </li>
 
-                <li
-                  onClick={handleNavigateToAviator}
-                  className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
-                >
-                  <span className="w-3 h-auto xs:w-4">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 64 64"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M10.2208 25.2081C8.58995 23.849 8.72593 21.3034 10.4923 20.1258L22.5839 12.7529L30.5466 12.458L39.7792 6.91839C46.1332 3.10599 53.757 2.0196 60.923 3.90539C62.9758 10.2502 62.0646 17.1819 58.4418 22.7807L51.1908 33.9869L50.6009 42.2446L42.3433 54.3361C41.4141 55.0795 40.1911 55.3464 39.0367 55.0578L38.8483 55.0107C38.6265 54.9553 38.424 54.8406 38.2623 54.6789L37.9195 54.3361L32.611 45.7836L26.1229 46.6683L21.1093 41.6547L16.6855 36.9361L17.8652 30.153L10.4923 25.4343L10.2208 25.2081ZM52.9603 19.2411C52.9603 23.4759 49.5273 26.9089 45.2925 26.9089C41.0576 26.9089 37.6246 23.4759 37.6246 19.2411C37.6246 15.0062 41.0576 11.5732 45.2925 11.5732C49.5273 11.5732 52.9603 15.0062 52.9603 19.2411ZM17.376 44.2883L2 58.9329L4.01489 61.0484L19.3909 46.4039L17.376 44.2883ZM10.2577 58.9316L21.2972 48.4172L23.3121 50.5327L12.2725 61.0471L10.2577 58.9316ZM13.0396 40.1595L2 50.6739L4.01489 52.7894L15.0545 42.275L13.0396 40.1595Z"
-                        fill="#c10931"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    Aviator
-                  </span>
-                </li>
                 {settings?.apkLink && (
                   <li
                     onClick={handleDownloadAPK}
                     className="px-3 py-2 transition-all rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] flex items-center justify-start gap-x-4 cursor-pointer"
                   >
-                    <span className="w-3 h-auto xs:w-4 primary-icons">
+                    <span className="w-5 h-auto xs:w-4 primary-icons">
                       <svg
                         width="20"
                         height="20"
@@ -576,7 +601,7 @@ const LeftDeskSidebar = () => {
                     </span>
                   </li>
                 )}
-                {socialLink?.whatsapplink ||
+                {/* {socialLink?.whatsapplink ||
                 socialLink?.instagramLink ||
                 socialLink?.telegramLink ? (
                   <li className="p-1">
@@ -723,7 +748,7 @@ const LeftDeskSidebar = () => {
                       </div>
                     </div>
                   </li>
-                ) : null}
+                ) : null} */}
               </ul>
             </div>
           </div>

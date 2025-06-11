@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useLiveCasinoLobby from "../../../hooks/useLiveCasinoLobby";
-// import assets from "../../../assets";
-import FAQ from "../desktop/Home/FAQ";
 import {
   setSelectedCategory,
   setShowLoginModal,
@@ -320,7 +318,6 @@ const LiveSlotCrashFishing = ({ casinoType }) => {
                 </div>
               </div>
             </div>
-            <FAQ />
           </div>
         </div>
       </div>

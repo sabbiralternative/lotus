@@ -253,7 +253,7 @@ const Fancy = ({ fancy }) => {
                 {isOddSuspended(games) ? (
                   <SuspendedOdd colSpan={5} />
                 ) : (
-                  <div className="col-span-5 md:col-span-6 h-12 grid grid-cols-2 md:grid-cols-6 relative">
+                  <div className="col-span-5 md:col-span-6 h-12 grid grid-cols-2 md:grid-cols-6 relative font-lato">
                     <span
                       onClick={() =>
                         handleOpenBetSlip("lay", games, games?.runners?.[0])
@@ -268,7 +268,7 @@ const Fancy = ({ fancy }) => {
                         >
                           <span
                             id="oddBtnPrice"
-                            className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-sm md:text-[15px] font-semibold"
+                            className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
                           >
                             {games?.runners?.[0]?.lay?.[0]?.line || "-"}
                           </span>
@@ -276,7 +276,7 @@ const Fancy = ({ fancy }) => {
                             id="oddBtnSize"
                             className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                           >
-                            <span className="w-max break-all truncate">
+                            <span className="w-max break-all truncate text-[9px]">
                               {" "}
                               {games?.runners?.[0]?.lay?.[0]?.price}
                             </span>
@@ -298,7 +298,7 @@ const Fancy = ({ fancy }) => {
                         >
                           <span
                             id="oddBtnPrice"
-                            className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-sm md:text-[15px] font-semibold"
+                            className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
                           >
                             {games?.runners?.[0]?.back?.[0]?.line}
                           </span>
@@ -306,7 +306,7 @@ const Fancy = ({ fancy }) => {
                             id="oddBtnSize"
                             className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                           >
-                            <span className="w-max break-all truncate">
+                            <span className="w-max break-all truncate text-[9px]">
                               {" "}
                               {games?.runners?.[0]?.back?.[0]?.price}
                             </span>

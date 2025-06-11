@@ -5,6 +5,7 @@ import { settings } from "../../../api";
 import useLanguage from "../../../hooks/useLanguage";
 import { languageValue } from "../../../utils/language";
 import { LanguageKey } from "../../../const";
+import assets from "../../../assets";
 
 const LoggedIn = ({
   balance,
@@ -159,7 +160,7 @@ cursor-pointer
         )}
       </div>
       <div
-        className={`w-max flex items-center justify-center ${
+        className={`w-full lg:w-max flex items-center justify-end ${
           showMobileSearch ? "hidden" : ""
         }`}
       >
@@ -247,16 +248,17 @@ cursor-pointer
             </span>
             <span className="shimmer"></span>
           </button>
+
           <button
             onClick={() => dispatch(setShowRightSidebar(true))}
             title="Balance"
-            className="inline-block  leading-normal relative overflow-hidden  transition duration-150 ease-in-out  rounded-full text-text_Quaternary  pl-3 bg-bg_Secondary flex items-center justify-center pr-1 py-1 xs:py-1 sm:py-2  gap-1 shadow-[0_8px_30px_rgb(0,0,0,0.12)] 
+            className="leading-normal relative overflow-hidden  transition duration-150 ease-in-out  rounded-sm text-text_Quaternary  pl-3 bg-bg_Secondary flex flex-col items-center justify-center pr-1 py-1 xs:py-1 sm:py-2  gap-1 shadow-[0_8px_30px_rgb(0,0,0,0.12)] 
 cursor-pointer
 "
             type="button"
           >
+            <img src={assets.userIcon} alt="" />
             <span className="text-xs sm:text-base font-semibold bg-transparent">
-              ₹
               {bonusToken &&
                 bonusBalance &&
                 bonusBalance?.availBalance &&
@@ -268,22 +270,6 @@ cursor-pointer
                 balance?.availBalance &&
                 (balance?.availBalance + balance?.deductedExposure).toFixed(2)}
             </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="var(--color-quaternary)"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-              <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-              <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
-            </svg>
           </button>
         </div>
       </div>

@@ -1572,3 +1572,14 @@ html * {
 .bg-border {
   border-color: var(--color-bg-secondary);
 }
+
+.headerDeskNav-content__list .list-item:first-child:before {
+  content: "";
+}
+
+.headerDeskNav-content__list .list-item:before {
+  content: url("/src/assets/images/ellipseHeader.cd5a5024.svg");
+  position: absolute;
+  left: -9px;
+  top: 0px;
+}

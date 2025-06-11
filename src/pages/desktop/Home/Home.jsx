@@ -3,11 +3,10 @@ import { useSelector } from "react-redux";
 import { useGetAllGroupEventsQuery } from "../../../redux/features/events/events";
 
 import RightDeskSidebar from "../../../components/shared/desktop/RightDeskSidebar/RightDeskSidebar";
-import Banner from "../../../components/ui/desktop/Home/Banner";
 import InPlay from "../../../components/ui/desktop/Home/InPlay";
 
 // import UpcomingEvents from "../../../components/ui/desktop/Home/UpcomingEvents";
-import FAQ from "../../../components/ui/desktop/Home/FAQ";
+
 import WhatsApp from "../../../components/ui/desktop/Home/WhatsApp";
 // import WithdrawAndDepositButton from "../../../components/ui/desktop/Home/WithdrawAndDepositButton";
 import LeftDeskSidebar from "../../../components/shared/desktop/LeftDeskSidebar/LeftDeskSidebar";
@@ -22,6 +21,9 @@ import Originals from "../../../components/ui/desktop/Home/Originals";
 import CasinoProvider from "../../../components/ui/CasinoProvider/CasinoProvider";
 import PopularGames from "../../../components/ui/PopularGames/PopularGames";
 import useLotusHomeLobby from "../../../hooks/useLotusHomeLobby";
+import Banner from "../../../components/ui/mobile/home/Banner";
+import filterUpcoming from "../../../utils/filterUpcoming";
+import SingleGroup from "../../../components/ui/desktop/Home/SingleGroup";
 
 // import CardGames from "../../../components/ui/CardGames/CardGames";
 // import IndianLiveCasino from "../../../components/ui/IndianLiveCasino/IndianLiveCasino";
@@ -35,10 +37,16 @@ const Home = () => {
   const { data } = useGetAllGroupEventsQuery(group, {
     pollingInterval: 1000,
   });
+  const { data: upcomingCricket } = useGetAllGroupEventsQuery(4);
 
   useEffect(() => {
     refetchBalance();
   }, [refetchBalance]);
+  let upComing = [];
+
+  if (data) {
+    upComing = filterUpcoming(upcomingCricket);
+  }
 
   return (
     <>
@@ -64,12 +72,22 @@ const Home = () => {
                 <CasinoProvider casinoProviders={lotusLobby?.casinoProviders} />
                 <AuraWolf />
                 <PopularGames popularGames={lotusLobby?.popularGames} />
+
+                {upComing?.length > 0 && (
+                  <SingleGroup
+                    cricket={true}
+                    margin={true}
+                    data={upcomingCricket}
+                    filterData={upComing}
+                    title="Upcoming Events"
+                  />
+                )}
+
                 {/* <UpcomingEvents /> */}
                 {/* <CardGames /> */}
                 {/* <IndianLiveCasino />
                   <Casino /> */}
               </div>
-              <FAQ />
             </div>
           </>
         )}

@@ -15,7 +15,6 @@ import { LanguageKey } from "../../../../const";
 
 const RightDeskSidebar = () => {
   const { valueByLanguage } = useLanguage();
-  const memberId = localStorage.getItem("memberId");
   const navigate = useNavigate();
   const [showReferral, setShowReferral] = useState(false);
   // const { socialLink } = useGetSocialLink();
@@ -67,7 +66,7 @@ const RightDeskSidebar = () => {
     <>
       {showReferral && <Referral setShowReferral={setShowReferral} />}
       <div
-        className={`fixed top-0 left-0 z-[99999] w-full h-dvh bg-opacity-50 block primary-icon-color`}
+        className={`fixed top-0 left-0 z-[999] w-full h-dvh bg-opacity-50 block primary-icon-color`}
         style={{ visibility: `${showRightSidebar ? "visible" : "hidden"}` }}
       ></div>
       <div className="undefined">
@@ -83,33 +82,15 @@ const RightDeskSidebar = () => {
             }}
             className="overflow-y-auto h-max divide-y"
           >
-            <li className="px-3 py-2 flex items-center justify-between ">
-              <div className="flex items-center justify-start gap-x-1.5 ">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="var(--color-iconsColor)"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z"></path>
-                    <path d="M11 4h2"></path>
-                    <path d="M12 17v.01"></path>
-                  </svg>
-                </span>
+            <li className="px-3 py-6 flex items-center justify-between relative">
+              <div className="flex items-center justify-center w-full gap-x-1.5 ">
                 <span className="font-lato-bold font-semibold text-sm xs:text-base text-text_Ternary">
                   {user}
                 </span>
               </div>
               <button
                 onClick={() => dispatch(setShowRightSidebar(false))}
-                className="inline-block leading-normal relative overflow-hidden transition duration-150 ease-in-out active:scale-105 cursor-pointer"
+                className="inline-block leading-normal  overflow-hidden transition duration-150 ease-in-out active:scale-105 cursor-pointer absolute top-0 right-0"
                 type="button"
               >
                 <svg
@@ -126,32 +107,7 @@ const RightDeskSidebar = () => {
                 </svg>
               </button>
             </li>
-            <li className="px-3 py-2 flex items-center justify-between ">
-              <div className="flex items-center justify-start gap-x-1.5 ">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="var(--color-iconsColor)"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z"></path>
-                    <path d="M11 4h2"></path>
-                    <path d="M12 17v.01"></path>
-                  </svg>
-                </span>
-                <span className="font-lato-bold font-semibold text-sm xs:text-base text-text_Ternary">
-                  {languageValue(valueByLanguage, LanguageKey.USER_ID)} :{" "}
-                  {memberId}
-                </span>
-              </div>
-            </li>
+
             <li className="px-3 py-2 flex items-start justify-start flex-col gap-2">
               <div className="flex items-center justify-start gap-2.5">
                 <span>
@@ -182,27 +138,27 @@ const RightDeskSidebar = () => {
                 </span>
               </div>
               <div className="grid grid-cols-2 gap-0.5 w-full">
-                <div className="flex w-full flex-col rounded items-start bg-bg_Ternary8 border px-2 py-1 col-span-2">
-                  <span className="uppercase font-normal text-xxs">
-                    {languageValue(valueByLanguage, LanguageKey.BALANCE)}
-                  </span>
-                  <span className="font-lato text-sm font-medium text-text_Success">
+                <div className="flex w-full  rounded items-center justify-between   px-2 py-1 col-span-2">
+                  <span className="font-normal text-xs">Available credit</span>
+                  <span className="font-lato text-xs font-medium text-text_Success">
                     ₹ {balance?.availBalance}
                   </span>
                 </div>
-                {/* <div className="flex w-full flex-col rounded items-start bg-bg_Ternary8 border px-2 py-1 col-span-1">
-                  <span className="uppercase font-normal text-xxs">
-                    Free Cash
+                <div className="flex w-full  rounded items-center justify-between   px-2 py-1 col-span-2">
+                  <span className="font-normal text-xs">Credit limit</span>
+                  <span className="font-lato text-xs font-medium text-text_Success">
+                    ₹ {balance?.creditLimit}
                   </span>
-                  <span className="font-lato text-sm font-medium text-text_Ternary">
-                    ₹ 0
+                </div>
+                <div className="flex w-full  rounded items-center justify-between   px-2 py-1 col-span-2">
+                  <span className="font-normal text-xs">Winnings</span>
+                  <span className="font-lato text-xs font-medium text-text_Success">
+                    ₹ {balance?.winnings}
                   </span>
-                </div> */}
-                <div className="flex w-full flex-col rounded items-start bg-bg_Ternary8 border px-2 py-1 col-span-2">
-                  <span className="uppercase font-normal text-xxs">
-                    Net Exposure
-                  </span>
-                  <span className="font-lato text-sm font-medium text-text_Success">
+                </div>
+                <div className="flex w-full  rounded items-center justify-between   px-2 py-1 col-span-2">
+                  <span className="font-normal text-xs"> Net Exposure</span>
+                  <span className="font-lato text-xs font-medium text-text_Success">
                     ₹ {balance?.deductedExposure}
                   </span>
                 </div>
@@ -310,79 +266,8 @@ const RightDeskSidebar = () => {
                 </div>
               </div>
             </li>
-            {/* <li className="px-3 py-2 flex items-start justify-start flex-col gap-2">
-              <div className="flex items-center justify-start gap-x-2.5">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="var(--color-iconsColor)"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z"></path>
-                  <path d="M12 8l0 13"></path>
-                  <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"></path>
-                  <path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5"></path>
-                </svg>
-                <span className="font-lato-bold font-semibold text-sm xs:text-base text-text_Ternary">
-                  Bonus Information
-                </span>
-              </div>
-              <div className="grid grid-cols-2 gap-0.5 w-full">
-                <div className="flex w-full col-span-1 flex-col rounded items-start bg-bg_Ternary8 border px-2 py-1">
-                  <span className="uppercase font-normal text-xxs">
-                    Bonus Balance
-                  </span>
-                  <span className="font-lato text-sm text-text_Ternary">
-                    ₹ {bonusBalance?.availBalance}
-                  </span>
-                </div>
-                <div className="flex w-full col-span-1 flex-col rounded items-start bg-bg_Ternary8 border px-2 py-1">
-                  <span className="uppercase font-normal text-xxs">
-                    Net Exposure
-                  </span>
-                  <span className="font-lato text-sm text-text_Danger">
-                    ₹ {bonusBalance?.deductedExposure}
-                  </span>
-                </div>
-                <div className="flex col-span-2 items-center justify-between w-full">
-                  <span className="font-lato font-bold text-sm">
-                    Play With Bonus{" "}
-                  </span>
-                  <span className="font-lato-bold font-medium text-sm mt-2">
-                    <label className="inline-flex items-center cursor-pointer relative">
-                      <input
-                        onChange={handleToggleBalance}
-                        className="sr-only peer"
-                        type="checkbox"
-                        checked={bonusToken ? true : false}
-                      />
-                      <div className="relative bg-bg_Ternary9 border-[0.5px] font-lato border-betSlipCancelBtnColor rounded-full peer-checked:bg-bg_SwitchCheckedBg h-7 w-14">
-                        <span
-                          className={`absolute top-1/2 right-[5px] transform -translate-y-1/2 text-[10px] font-bold text-text_Primary text-[10px]`}
-                        >
-                          {!bonusToken && "OFF"}
-                        </span>
-                        <div
-                          style={{ left: `${bonusToken ? "25px" : "0"}` }}
-                          className={`bg-bg_Quaternary h-full border-[0.5px] border-betSlipCancelBtnColor transition-all ease-in-out aspect-square absolute  rounded-full`}
-                        ></div>
-                      </div>
-                    </label>
-                  </span>
-                </div>
-              </div>
-            </li> */}
 
             <li className="divide-y flex items-start justify-start flex-col">
-              <span className="font-lato-bold font-semibold px-3 py-1 w-full bg-bg_Ternary8 text-xs xs:text-sm text-text_Ternary">
-                Statements
-              </span>
               <div className="divide-y pl-5 flex items-start justify-start w-full flex-col">
                 <div
                   onClick={() => handleNavigate("/deposit-withdraw-report")}
@@ -672,36 +557,7 @@ const RightDeskSidebar = () => {
               </div>
             </li>
             <li className="divide-y flex items-start justify-start flex-col">
-              <span className="font-lato-bold font-semibold px-3 py-1 w-full bg-bg_Ternary8 text-xs xs:text-sm text-text_Ternary">
-                Account Settings
-              </span>
               <div className="divide-y pl-5 flex items-start justify-start w-full flex-col">
-                {/* <div className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer">
-                  <span className="w-4 h-auto xs:w-5 text-text_Primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="var(--color-iconsColor)"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M10.5 21h-4.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3"></path>
-                      <path d="M16 3v4"></path>
-                      <path d="M8 3v4"></path>
-                      <path d="M4 11h10"></path>
-                      <path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
-                      <path d="M18 16.5v1.5l.5 .5"></path>
-                    </svg>
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    Time Settings
-                  </span>
-                </div> */}
                 <div
                   onClick={() => handleNavigate("/stake-settings")}
                   className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer"
@@ -735,28 +591,6 @@ const RightDeskSidebar = () => {
                   Android App
                 </span>
                 <div className="divide-y pl-5 flex items-start justify-start w-full flex-col">
-                  {/* <div className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer">
-                <span className="w-4 h-auto xs:w-5 text-text_Primary">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="var(--color-iconsColor)"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M8 9h8"></path>
-                    <path d="M8 13h6"></path>
-                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"></path>
-                  </svg>
-                </span>
-                <span className="font-medium text-sm xs:text-base">
-                  Chat With Us
-                </span>
-              </div> */}
                   <div
                     onClick={handleDownloadAPK}
                     className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer"
@@ -791,9 +625,6 @@ const RightDeskSidebar = () => {
               </li>
             )}
             <li className="divide-y flex items-start justify-start flex-col">
-              <span className="font-lato-bold font-semibold px-3 py-1 w-full bg-bg_Ternary8 text-xs xs:text-sm text-text_Ternary">
-                Legal &amp; Compliance
-              </span>
               <div className="divide-y pl-5 flex items-start justify-start w-full flex-col">
                 <div
                   onClick={() => handleNavigate("/rules-&-regulation")}
@@ -903,9 +734,6 @@ const RightDeskSidebar = () => {
               </div>
             </li>
             <li className="divide-y flex items-start justify-start flex-col">
-              <span className="font-lato-bold font-semibold px-3 py-1 w-full bg-bg_Ternary8 text-xs xs:text-sm text-text_Ternary">
-                Account actions
-              </span>
               <div className="divide-y pl-5 flex items-start justify-start w-full flex-col">
                 <div
                   onClick={() => handleNavigate("/change-password")}
@@ -968,221 +796,6 @@ const RightDeskSidebar = () => {
                 </div>
               </div>
             </li>
-            <li className="px-3 py-2">
-              <span className="flex text-center text-text_Primary text-sm xs:text-base font-medium">
-                Register online and play online
-              </span>
-            </li>
-            {/* <li className="p-1">
-              <div className="flex flex-col gap-1 p-3 items-center bg-bg_contactUsCard rounded">
-                <span className="text-text_Quaternary font-semibold">
-                  Contact Us
-                </span>
-                <div className="flex w-full items-center justify-center gap-1">
-                  {socialLink?.whatsapplink && (
-                    <a
-                      onClick={() =>
-                        handleOpenSocialLink(socialLink?.whatsapplink)
-                      }
-                      title="whatsapp"
-                      target="_blank"
-                      className="flex items-center justify-center gap-1 w-10 h-10 cursor-pointer"
-                    >
-                      <svg
-                        width="45"
-                        height="45"
-                        viewBox="0 0 45 45"
-                        fill="var(--color-quaternary)"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          width="45"
-                          height="45"
-                          rx="6"
-                          fill="var(--color-quaternary)"
-                          fillOpacity="0.2"
-                        ></rect>
-                        <g clipPath="url(#clip0_1217_680)">
-                          <path
-                            d="M22.503 10H22.497C15.8805 10 10.5 15.382 10.5 22C10.5 24.625 11.346 27.058 12.7845 29.0335L11.289 33.4915L15.9015 32.017C17.799 33.274 20.0625 34 22.503 34C29.1195 34 34.5 28.6165 34.5 22C34.5 15.3835 29.1195 10 22.503 10ZM29.4855 26.9455C29.196 27.763 28.047 28.441 27.1305 28.639C26.5035 28.7725 25.6845 28.879 22.9275 27.736C19.401 26.275 17.13 22.6915 16.953 22.459C16.7835 22.2265 15.528 20.5615 15.528 18.8395C15.528 17.1175 16.4025 16.279 16.755 15.919C17.0445 15.6235 17.523 15.4885 17.982 15.4885C18.1305 15.4885 18.264 15.496 18.384 15.502C18.7365 15.517 18.9135 15.538 19.146 16.0945C19.4355 16.792 20.1405 18.514 20.2245 18.691C20.31 18.868 20.3955 19.108 20.2755 19.3405C20.163 19.5805 20.064 19.687 19.887 19.891C19.71 20.095 19.542 20.251 19.365 20.47C19.203 20.6605 19.02 20.8645 19.224 21.217C19.428 21.562 20.133 22.7125 21.171 23.6365C22.5105 24.829 23.5965 25.21 23.985 25.372C24.2745 25.492 24.6195 25.4635 24.831 25.2385C25.0995 24.949 25.431 24.469 25.7685 23.9965C26.0085 23.6575 26.3115 23.6155 26.6295 23.7355C26.9535 23.848 28.668 24.6955 29.0205 24.871C29.373 25.048 29.6055 25.132 29.691 25.2805C29.775 25.429 29.775 26.1265 29.4855 26.9455Z"
-                            fill="var(--color-quaternary)"
-                          ></path>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_1217_680">
-                            <rect
-                              width="24"
-                              height="24"
-                              fill="var(--color-quaternary)"
-                              transform="translate(10.5 10)"
-                            ></rect>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
-                  )}
-
-                  {socialLink?.instagramLink && (
-                    <a
-                      onClick={() =>
-                        handleOpenSocialLink(socialLink?.instagramLink)
-                      }
-                      title="Instagram"
-                      target="_blank"
-                      className="flex items-center justify-center gap-1 w-10 h-10 cursor-pointer"
-                    >
-                      <svg
-                        width="45"
-                        height="45"
-                        viewBox="0 0 45 45"
-                        fill="var(--color-quaternary)"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          width="45"
-                          height="45"
-                          rx="6"
-                          fill="var(--color-quaternary)"
-                          fillOpacity="0.2"
-                        ></rect>
-                        <g clipPath="url(#clip0_1217_692)">
-                          <path
-                            d="M28.3503 10H18.6497C14.7074 10 11.5 13.2074 11.5 17.1497V26.8503C11.5 30.7926 14.7074 34 18.6497 34H28.3503C32.2926 34 35.5 30.7926 35.5 26.8503V17.1497C35.5 13.2074 32.2926 10 28.3503 10ZM33.0856 26.8503C33.0856 29.4655 30.9655 31.5856 28.3503 31.5856H18.6497C16.0345 31.5856 13.9144 29.4655 13.9144 26.8503V17.1497C13.9144 14.5345 16.0345 12.4144 18.6497 12.4144H28.3503C30.9655 12.4144 33.0856 14.5345 33.0856 17.1497V26.8503Z"
-                            fill="var(--color-quaternary)"
-                          ></path>
-                          <path
-                            d="M23.5002 15.7927C20.0775 15.7927 17.293 18.5773 17.293 21.9999C17.293 25.4226 20.0775 28.2072 23.5002 28.2072C26.9229 28.2072 29.7075 25.4226 29.7075 21.9999C29.7075 18.5773 26.9229 15.7927 23.5002 15.7927ZM23.5002 25.7928C21.4055 25.7928 19.7074 24.0947 19.7074 22C19.7074 19.9052 21.4055 18.2071 23.5002 18.2071C25.595 18.2071 27.2931 19.9052 27.2931 22C27.2931 24.0947 25.5949 25.7928 23.5002 25.7928Z"
-                            fill="var(--color-quaternary)"
-                          ></path>
-                          <path
-                            d="M29.7193 17.3267C30.5408 17.3267 31.2067 16.6608 31.2067 15.8393C31.2067 15.0179 30.5408 14.352 29.7193 14.352C28.8979 14.352 28.2319 15.0179 28.2319 15.8393C28.2319 16.6608 28.8979 17.3267 29.7193 17.3267Z"
-                            fill="var(--color-quaternary)"
-                          ></path>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_1217_692">
-                            <rect
-                              width="24"
-                              height="24"
-                              fill="var(--color-quaternary)"
-                              transform="translate(11.5 10)"
-                            ></rect>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
-                  )}
-
-                  {socialLink?.telegramLink && (
-                    <a
-                      onClick={() =>
-                        handleOpenSocialLink(socialLink?.telegramLink)
-                      }
-                      title="Telegram"
-                      target="_blank"
-                      className="flex items-center justify-center gap-1 w-10 h-10 cursor-pointer"
-                    >
-                      <svg
-                        width="45"
-                        height="45"
-                        viewBox="0 0 45 45"
-                        fill="var(--color-quaternary)"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          width="45"
-                          height="45"
-                          rx="6"
-                          fill="var(--color-quaternary)"
-                          fillOpacity="0.2"
-                        ></rect>
-                        <g clipPath="url(#clip0_1217_675)">
-                          <path
-                            d="M18.4172 25.181L18.0202 30.765C18.5882 30.765 18.8342 30.521 19.1292 30.228L21.7922 27.683L27.3102 31.724C28.3222 32.288 29.0352 31.991 29.3082 30.793L32.9302 13.821L32.9312 13.82C33.2522 12.324 32.3902 11.739 31.4042 12.106L10.1142 20.257C8.66118 20.821 8.68318 21.631 9.86718 21.998L15.3102 23.691L27.9532 15.78C28.5482 15.386 29.0892 15.604 28.6442 15.998L18.4172 25.181Z"
-                            fill="var(--color-quaternary)"
-                          ></path>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_1217_675">
-                            <rect
-                              width="24"
-                              height="24"
-                              fill="var(--color-quaternary)"
-                              transform="translate(9 10)"
-                            ></rect>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
-                  )}
-
-                  <a
-                    title="Facebook"
-                    href="https://www.facebook.com/Uniconbet-100290802670866"
-                    target="_blank"
-                    className="flex items-center justify-center gap-1 w-10 h-10"
-                  >
-                    <svg
-                      width="45"
-                      height="45"
-                      viewBox="0 0 45 45"
-                      fill="var(--color-quaternary)"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        width="45"
-                        height="45"
-                        rx="6"
-                        fill="var(--color-quaternary)"
-                        fillOpacity="0.2"
-                      ></rect>
-                      <path
-                        d="M34 22.0301C34 15.3895 28.624 10 22 10C15.376 10 10 15.3895 10 22.0301C10 27.8526 14.128 32.7007 19.6 33.8195V25.6391H17.2V22.0301H19.6V19.0226C19.6 16.7008 21.484 14.812 23.8 14.812H26.8V18.4211H24.4C23.74 18.4211 23.2 18.9624 23.2 19.6241V22.0301H26.8V25.6391H23.2V34C29.26 33.3985 34 28.2737 34 22.0301Z"
-                        fill="var(--color-quaternary)"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    title="Gmail"
-                    href="mailto:support@uniconbet.com"
-                    target="_blank"
-                    className="flex items-center justify-center gap-1 w-10 h-10"
-                  >
-                    <svg
-                      width="45"
-                      height="45"
-                      viewBox="0 0 45 45"
-                      fill="var(--color-quaternary)"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        width="45"
-                        height="45"
-                        rx="6"
-                        fill="var(--color-quaternary)"
-                        fillOpacity="0.2"
-                      ></rect>
-                      <path
-                        d="M25.8472 22.1105L32.763 26.4842V17.5474L25.8472 22.1105Z"
-                        fill="var(--color-quaternary)"
-                      ></path>
-                      <path
-                        d="M12.2368 17.5474V26.4842L19.1526 22.1105L12.2368 17.5474Z"
-                        fill="var(--color-quaternary)"
-                      ></path>
-                      <path
-                        d="M31.4843 14.9421H13.5159C12.8843 14.9421 12.3633 15.4158 12.2686 16.0316L22.5001 22.7737L32.7317 16.0316C32.637 15.4158 32.1001 14.9421 31.4843 14.9421Z"
-                        fill="var(--color-quaternary)"
-                      ></path>
-                      <path
-                        d="M24.6631 22.8842L22.8473 24.0842C22.7368 24.1474 22.6263 24.1947 22.5 24.1947C22.3737 24.1947 22.2473 24.1632 22.1526 24.0842L20.3368 22.8842L12.2842 27.9842C12.3789 28.6 12.9 29.0579 13.5315 29.0737H31.5C32.1315 29.0737 32.6526 28.6158 32.7473 27.9842L24.6631 22.8842Z"
-                        fill="var(--color-quaternary)"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </li> */}
           </ul>
         </div>
       </div>
