@@ -3,37 +3,37 @@ import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../../../../redux/features/auth/authSlice";
-import useBonusBalance from "../../../../hooks/useBonusBalance";
+// import { useDispatch, useSelector } from "react-redux";
+// import { setUser } from "../../../../redux/features/auth/authSlice";
+// import useBonusBalance from "../../../../hooks/useBonusBalance";
 
 const BalanceInfo = ({ balance }) => {
-  const { bonusBalance } = useBonusBalance();
-  const { token, user, bonusToken } = useSelector((state) => state.auth);
+  // const { bonusBalance } = useBonusBalance();
+  // const { token, user, bonusToken } = useSelector((state) => state.auth);
   const [showBalance, setShowBalance] = useState(false);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleToggleBalance = (e) => {
-    const checked = e.target.checked;
-    if (checked) {
-      const bonusToken = localStorage.getItem("bonusToken");
-      dispatch(setUser({ user, token, bonusToken }));
-    } else {
-      dispatch(setUser({ user, token }));
-    }
-  };
+  // const handleToggleBalance = (e) => {
+  //   const checked = e.target.checked;
+  //   if (checked) {
+  //     const bonusToken = localStorage.getItem("bonusToken");
+  //     dispatch(setUser({ user, token, bonusToken }));
+  //   } else {
+  //     dispatch(setUser({ user, token }));
+  //   }
+  // };
   return (
-    <div className="flex flex-col w-full gap-1 select-none">
+    <div className="flex flex-col w-full select-none">
       <div
         onClick={() => setShowBalance((prev) => !prev)}
-        className="w-full flex px-3 gap-x-1 py-2 relative cursor-pointer rounded bg-bg_Secondary"
+        className="w-full flex px-3 gap-x-1 py-2 relative cursor-pointer  bg-bg_Secondary"
       >
-        <div className="flex flex-col items-start">
-          <span className="uppercase text-text_Quaternary font-normal text-xxs">
-            Available Credit
+        <div className="flex  items-center justify-center">
+          <span className="uppercase text-text_Quaternary font-normal text-xs">
+            Available Credit :
           </span>
-          <span className="text-text_Quaternary font-lato text-sm">
-            ₹ {balance?.availBalance}
+          <span className="text-text_Quaternary font-lato text-xs ml-1">
+            {balance?.availBalance}
           </span>
         </div>
         <div className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer mr-2 flex items-center justify-center autoAnimate -rotate-180">
@@ -47,30 +47,46 @@ const BalanceInfo = ({ balance }) => {
 
       <div
         className="overflow-hidden transition-height duration-300 ease-in-out"
-        style={{ height: showBalance ? "226px" : "0px" }}
+        style={{ height: showBalance ? "100px" : "0px" }}
       >
-        <div className="flex flex-col gap-1 border autoAnimate rounded-lg opacity-100">
-          <div className="grid grid-cols-2 gap-1 w-full p-1">
-            <div className="flex w-full flex-col rounded items-start bg-bg_Ternary8 border px-2 py-1 col-span-2">
-              <span className="uppercase font-normal text-xxs">Balance</span>
-              <span className="font-lato text-sm">
-                ₹ {balance?.availBalance}
+        <div className="flex flex-col gap-1 border autoAnimate border-black opacity-100">
+          <div className="w-full p-1">
+            <div className="flex w-full   items-center   px-2 py-1 ">
+              <span className="uppercase font-semibold text-xs">
+                Credit Limit :
+              </span>
+              <span className="font-lato text-xs ml-1">
+                {balance?.creditLimit}
               </span>
             </div>
-            <div className="flex w-full flex-col rounded items-start bg-bg_Ternary8 border px-2 py-1">
-              <span className="uppercase font-normal text-xxs">Free Cash</span>
-              <span className="font-lato text-sm">₹ 0.00</span>
-            </div>
-            <div className="flex w-full flex-col rounded items-start bg-bg_Ternary8 border px-2 py-1">
-              <span className="uppercase font-normal text-xxs">
-                Net Exposure
+            <div className="flex w-full   items-center   px-2 py-1 ">
+              <span className="uppercase font-semibold text-xs">
+                Winnings :
               </span>
-              <span className="font-lato text-sm">
-                ₹ {balance?.deductedExposure}
+              <span className="font-lato text-xs ml-1 text-text_Success">
+                {balance?.winnings}
+              </span>
+            </div>
+            <div className="flex w-full   items-center   px-2 py-1 ">
+              <span className="uppercase font-semibold text-xs">
+                Available Balance :
+              </span>
+              <span className="font-lato text-xs ml-1">
+                {balance?.availBalance}
+              </span>
+            </div>
+
+            <div className="flex w-full   items-center   px-2 py-1">
+              <span className="uppercase font-semibold text-xs">
+                Total Net Exposure :
+              </span>
+              <span className="font-lato text-xs ml-1">
+                {balance?.deductedExposure}
               </span>
             </div>
           </div>
-          <div title="Bonus Information">
+
+          {/* <div title="Bonus Information">
             <div className="grid grid-cols-2 gap-1 p-1">
               <div className="px-1 col-span-2 flex items-center justify-start gap-1 primary-icons">
                 <svg
@@ -158,7 +174,7 @@ const BalanceInfo = ({ balance }) => {
                 </label>
               </div>
             </div>
-          </div>
+          </div> */}
           <div title="sWalletInfo"></div>
         </div>
       </div>

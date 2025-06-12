@@ -416,7 +416,7 @@ const Fancy = ({ fancy }) => {
                           >
                             <span
                               id="oddBtnPrice"
-                              className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
+                              className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
                             >
                               {games?.runners?.[0]?.back?.[0]?.line}
                             </span>
@@ -424,7 +424,7 @@ const Fancy = ({ fancy }) => {
                               id="oddBtnSize"
                               className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                             >
-                              <span className="w-max break-all truncate text-[9px]">
+                              <span className="w-max break-all truncate text-[9px] font-[200]">
                                 {" "}
                                 {games?.runners?.[0]?.back?.[0]?.price}
                               </span>

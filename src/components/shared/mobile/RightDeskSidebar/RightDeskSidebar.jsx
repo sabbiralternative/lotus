@@ -140,26 +140,26 @@ const RightDeskSidebar = () => {
               <div className="grid grid-cols-2 gap-0.5 w-full">
                 <div className="flex w-full  rounded items-center justify-between   px-2 py-1 col-span-2">
                   <span className="font-normal text-xs">Available credit</span>
-                  <span className="font-lato text-xs font-medium text-text_Success">
-                    ₹ {balance?.availBalance}
+                  <span className="font-lato text-xs font-bold">
+                    {balance?.availBalance}
                   </span>
                 </div>
                 <div className="flex w-full  rounded items-center justify-between   px-2 py-1 col-span-2">
                   <span className="font-normal text-xs">Credit limit</span>
-                  <span className="font-lato text-xs font-medium text-text_Success">
-                    ₹ {balance?.creditLimit}
+                  <span className="font-lato text-xs font-medium ">
+                    {balance?.creditLimit}
                   </span>
                 </div>
                 <div className="flex w-full  rounded items-center justify-between   px-2 py-1 col-span-2">
                   <span className="font-normal text-xs">Winnings</span>
                   <span className="font-lato text-xs font-medium text-text_Success">
-                    ₹ {balance?.winnings}
+                    {balance?.winnings}
                   </span>
                 </div>
                 <div className="flex w-full  rounded items-center justify-between   px-2 py-1 col-span-2">
                   <span className="font-normal text-xs"> Net Exposure</span>
-                  <span className="font-lato text-xs font-medium text-text_Success">
-                    ₹ {balance?.deductedExposure}
+                  <span className="font-lato text-xs font-medium ">
+                    {balance?.deductedExposure}
                   </span>
                 </div>
               </div>
@@ -270,59 +270,6 @@ const RightDeskSidebar = () => {
             <li className="divide-y flex items-start justify-start flex-col">
               <div className="divide-y pl-5 flex items-start justify-start w-full flex-col">
                 <div
-                  onClick={() => handleNavigate("/deposit-withdraw-report")}
-                  className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer"
-                >
-                  <span className="w-4 h-auto xs:w-5 text-text_Primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="var(--color-iconsColor)"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M11 16h10"></path>
-                      <path d="M11 16l4 4"></path>
-                      <path d="M11 16l4 -4"></path>
-                      <path d="M13 8h-10"></path>
-                      <path d="M13 8l-4 4"></path>
-                      <path d="M13 8l-4 -4"></path>
-                    </svg>
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    Deposit Withdraw Report
-                  </span>
-                </div>
-                {/* <div className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer">
-                  <span className="w-4 h-auto xs:w-5 text-text_Primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="var(--color-iconsColor)"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z"></path>
-                      <path d="M12 8l0 13"></path>
-                      <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"></path>
-                      <path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5"></path>
-                    </svg>
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    Bonuses
-                  </span>
-                </div> */}
-                <div
                   onClick={() => handleNavigate("/open-bets")}
                   className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer"
                 >
@@ -381,90 +328,6 @@ const RightDeskSidebar = () => {
                   </span>
                 </div>
 
-                {/* <div className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer">
-                  <span className="w-4 h-auto xs:w-5 text-text_Primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="var(--color-iconsColor)"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-                      <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-                      <path d="M9 7l1 0"></path>
-                      <path d="M9 13l6 0"></path>
-                      <path d="M13 17l2 0"></path>
-                    </svg>
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    Account Statement
-                  </span>
-                </div> */}
-                <div
-                  onClick={() => handleNavigate("/my-bank-details")}
-                  className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer"
-                >
-                  <span className="w-4 h-auto xs:w-5 text-text_Primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="var(--color-iconsColor)"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M11 16h10"></path>
-                      <path d="M11 16l4 4"></path>
-                      <path d="M11 16l4 -4"></path>
-                      <path d="M13 8h-10"></path>
-                      <path d="M13 8l-4 4"></path>
-                      <path d="M13 8l-4 -4"></path>
-                    </svg>
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    My Bank Details
-                  </span>
-                </div>
-                <div
-                  onClick={() => handleNavigate("/bonus-statement")}
-                  className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer"
-                >
-                  <span className="w-4 h-auto xs:w-5 text-text_Primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="var(--color-iconsColor)"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z"></path>
-                      <path d="M12 8l0 13"></path>
-                      <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"></path>
-                      <path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5"></path>
-                    </svg>
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    {languageValue(
-                      valueByLanguage,
-                      LanguageKey.BONUS_STATEMENT
-                    )}
-                  </span>
-                </div>
                 {settings.referral && (
                   <div
                     onClick={() => {
@@ -501,59 +364,6 @@ const RightDeskSidebar = () => {
                     </span>
                   </div>
                 )}
-
-                <div
-                  onClick={() => handleNavigate("/referral-statement")}
-                  className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer"
-                >
-                  <span className="w-4 h-auto xs:w-5 text-text_Primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="var(--color-iconsColor)"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z"></path>
-                      <path d="M12 8l0 13"></path>
-                      <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"></path>
-                      <path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5"></path>
-                    </svg>
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    Referral Statement
-                  </span>
-                </div>
-
-                {/* <div className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6 active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer">
-                  <span className="w-4 h-auto xs:w-5 text-text_Primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="var(--color-iconsColor)"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M4 21v-4a3 3 0 0 1 3 -3h5"></path>
-                      <path d="M9 17l3 -3l-3 -3"></path>
-                      <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-                      <path d="M5 11v-6a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-9.5"></path>
-                    </svg>
-                  </span>
-                  <span className="font-medium text-sm xs:text-base">
-                    Transfer Statement
-                  </span>
-                </div> */}
               </div>
             </li>
             <li className="divide-y flex items-start justify-start flex-col">

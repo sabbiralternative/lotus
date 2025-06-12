@@ -6,6 +6,9 @@ import useLanguage from "../../../hooks/useLanguage";
 import { languageValue } from "../../../utils/language";
 import { LanguageKey } from "../../../const";
 import assets from "../../../assets";
+import moment from "moment";
+import { IoLogOutOutline } from "react-icons/io5";
+import { logout } from "../../../redux/features/auth/authSlice";
 
 const LoggedIn = ({
   balance,
@@ -17,6 +20,7 @@ const LoggedIn = ({
   const navigate = useNavigate();
   const { user, bonusToken } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const lastLoggedIn = localStorage.getItem("lastLoggedIn");
 
   return (
     <>
@@ -28,14 +32,14 @@ const LoggedIn = ({
           {languageValue(valueByLanguage, LanguageKey.LOGIN)} as{" "}
           <span className="font-medium text-text_Quaternary">{user}</span>
         </div>
-        {/* <div className="flex  gap-0.5 text-white/80  text-nowrap whitespace-nowrap">
+        <div className="flex  gap-0.5 text-white/80  text-nowrap whitespace-nowrap">
           Last logged in
-          <span className="font-medium text-text_Quaternary">
-            8/15/2024, 7:24:09 PM
+          <span className="font-medium text-text_Quaternary ml-1">
+            {moment(lastLoggedIn).format("MM/DD/YYYY h:mm A")}
           </span>
-        </div> */}
+        </div>
       </div>
-      <div
+      {/* <div
         id="loginName"
         className=" text-text_Quaternary text-[10px] lg:text-[12px] lg:flex flex-col px-2 hidden"
       >
@@ -55,6 +59,33 @@ const LoggedIn = ({
               (balance?.availBalance + balance?.deductedExposure).toFixed(2)}
           </span>
         </div>
+      </div> */}
+      <div className=" w-max hidden items-center justify-center gap-1 rounded-full  lg:flex">
+        <button
+          onClick={() => dispatch(setShowRightSidebar(true))}
+          className="relative flex rounded-full gap-1   w-max font-extrabold items-center justify-center pr-4 pl-3 py-2 "
+        >
+          <span className=" w-4 text-text_LoginTextColor hidden md:block">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="var(--color-quaternary)"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path>
+              <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+            </svg>
+          </span>
+          <span className=" text-xxs text-text_Quaternary  md:text-text_LoginTextColor  font-normal font-lato md:font-semibold md:text-xs xs:text-xs ">
+            Account
+          </span>
+        </button>
       </div>
       <div
         id="deposit_withdraw_btn"
@@ -209,33 +240,21 @@ cursor-pointer
             </div>
           </div> */}
         </div>
+        {/* logout desktop */}
         <div className=" w-max hidden items-center justify-center gap-1 rounded-full  lg:flex">
           <button
-            onClick={() => dispatch(setShowRightSidebar(true))}
-            className="relative flex rounded-full gap-1 border border-quaternary hover:opacity-100 w-max font-extrabold items-center justify-center pr-4 pl-3 py-2 bg-bg_Secondary"
+            onClick={() => dispatch(logout())}
+            className="relative flex rounded-full gap-1   w-max font-extrabold items-center justify-center pr-4 pl-3 py-2 "
           >
-            <span className=" w-max text-text_LoginTextColor hidden md:block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="var(--color-quaternary)"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path>
-                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
-              </svg>
+            <span className=" w-4 text-text_LoginTextColor hidden md:block">
+              <IoLogOutOutline />
             </span>
             <span className=" text-xxs text-text_Quaternary  md:text-text_LoginTextColor  font-normal font-lato md:font-semibold md:text-xs xs:text-xs ">
-              Account
+              Logout
             </span>
           </button>
         </div>
+        {/* logout desktop */}
         <div className=" flex justify-between items-center gap-x-1 h-max lg:hidden">
           <button
             type="button"

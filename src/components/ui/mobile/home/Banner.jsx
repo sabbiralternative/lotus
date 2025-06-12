@@ -24,26 +24,31 @@ const Banner = () => {
       id: 4,
       name: "Cricket",
       image: assets.cricket_bg,
+      icon: assets.cricket,
     },
     {
       id: 1,
       name: "Football",
       image: assets.football_bg,
+      icon: assets.football,
     },
     {
       id: 2,
       name: "Tennis",
       image: assets.tennis_bg,
+      icon: assets.tennis,
     },
     {
       path: "/horse-racing",
       name: "Horse",
       image: assets.horse_bg,
+      icon: assets.horseRacing,
     },
     {
       path: "/greyhound-racing",
       name: "Greyhound",
       image: assets.greyhound_bg,
+      icon: assets.greyhound,
     },
   ];
 
@@ -52,26 +57,31 @@ const Banner = () => {
       path: "/",
       name: "Aura Casino",
       image: assets.aura_bg,
+      icon: assets.aura,
     },
     {
       path: "/",
       name: "Sportsbook",
       image: assets.sportsbook_quick_bg,
+      icon: assets.sportsBook,
     },
     {
       path: "/",
       name: "Slot",
       image: assets.slot_quick_bg,
+      icon: assets.slotGames,
     },
     {
       path: "/",
       name: "Multiplier",
       image: assets.multiplayer_quick_bg,
+      icon: assets.multiicon,
     },
     {
       path: "/",
       name: "Live Casino",
       image: assets.livecasino_quick_bg,
+      icon: assets.liveCasino,
     },
     {
       path: "/",
@@ -82,21 +92,25 @@ const Banner = () => {
       path: "/",
       name: "Fishing Games",
       image: assets.fishinggames_quick_bg,
+      icon: assets.fishingicon,
     },
     {
       path: "/",
       name: "Evolution Games",
       image: assets.evolution_quick_bg,
+      icon: assets.evoicon,
     },
     {
       path: "/",
       name: "E Cricket",
       image: assets.e_cricket_quick_bg,
+      icon: assets.cricket,
     },
     {
       path: "/",
       name: "Card Games",
       image: assets.cardgames_quick_bg,
+      icon: assets.cardGames,
     },
   ];
 
@@ -136,15 +150,18 @@ const Banner = () => {
                   }}
                 >
                   <div className="flex justify-center w-full h-full min-h-9 relative z-10 items-center min-w-[175px] sm:min-w-[240px] md:min-w-[280px] pl-[5px] pt-[2px] pb-[2px] pr-1  opacity-100">
-                    <img
-                      src={group.image}
-                      width="16"
-                      height="16"
-                      className="  w-4 h-4 sm:w-5 sm:h-5  ml-1 autoAnimate  "
-                      alt="Evolution-image"
-                      loading="lazy"
-                      title="Evolution"
-                    />
+                    {group?.icon && (
+                      <img
+                        src={group.icon}
+                        width="16"
+                        height="16"
+                        className="  w-4 h-4 sm:w-5 sm:h-5  ml-1 autoAnimate  "
+                        alt="Evolution-image"
+                        loading="lazy"
+                        title="Evolution"
+                      />
+                    )}
+
                     <span className=" ml-1 autoAnimate text-text_Quaternary text-xs capitalize pr-[2px] md:text-sm text-nowrap w-full truncate font-lato-bold  font-semibold md:font-semibold">
                       {group.name}
                     </span>
@@ -173,15 +190,18 @@ const Banner = () => {
                       style={{ backgroundImage: `url(${game.image})` }}
                     >
                       <div className="flex justify-center w-full h-full min-h-9 relative z-10 items-center min-w-[175px] sm:min-w-[240px] md:min-w-[280px] pl-[5px] pt-[2px] pb-[2px] pr-1 opacity-100">
-                        <img
-                          src={game.image}
-                          width="16"
-                          height="16"
-                          className="w-4 h-4 sm:w-5 sm:h-5 ml-1 autoAnimate"
-                          alt={`${game.name}-image`}
-                          loading="lazy"
-                          title={game.name}
-                        />
+                        {game?.icon && (
+                          <img
+                            src={game.icon}
+                            width="16"
+                            height="16"
+                            className="w-4 h-4 sm:w-5 sm:h-5 ml-1 autoAnimate"
+                            alt={`${game.icon}-image`}
+                            loading="lazy"
+                            title={game.icon}
+                          />
+                        )}
+
                         <span className="ml-1 autoAnimate text-text_Quaternary text-xs capitalize pr-[2px] md:text-sm text-nowrap w-full truncate font-lato-bold font-semibold md:font-semibold">
                           {game.name}
                         </span>

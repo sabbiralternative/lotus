@@ -26,7 +26,7 @@ const Score = ({ group, data, keys }) => {
               id="inPlayTime"
               className="flex items-center justify-center flex-col pl-[1px] pr-[1px]"
             >
-              <span className="text-text_InPlayEventsScoreAndTime text-[9px] font-medium text-ellipsis overflow-hidden w-full text-center">
+              <span className="text-[#cc5f36] text-[9px] font-medium text-ellipsis overflow-hidden w-full text-center">
                 {formatDate(data, keys)}
               </span>
               <span className="text-text_InPlayEventsScoreAndTime text-[6px] xs:text-[9px] font-medium w-full text-center">
@@ -70,7 +70,7 @@ const Score = ({ group, data, keys }) => {
               id="inPlayTime"
               className="flex items-center justify-center flex-col pl-[1px] pr-[1px]"
             >
-              <span className="text-text_InPlayEventsScoreAndTime text-[9px] font-medium text-ellipsis overflow-hidden w-full text-center">
+              <span className="text-[#cc5f36] text-[9px] font-medium text-ellipsis overflow-hidden w-full text-center">
                 {formatDate(data, keys)}
               </span>
               <span className="text-text_InPlayEventsScoreAndTime text-[6px] xs:text-[9px] font-medium w-full text-center">
@@ -127,7 +127,7 @@ const Score = ({ group, data, keys }) => {
               id="inPlayTime"
               className="flex items-center justify-center flex-col pl-[1px] pr-[1px]"
             >
-              <span className="text-text_InPlayEventsScoreAndTime text-[9px] font-medium text-ellipsis overflow-hidden w-full text-center">
+              <span className="text-[#cc5f36] text-[9px] font-medium text-ellipsis overflow-hidden w-full text-center">
                 {formatDate(data, keys)}
               </span>
               <span className="text-text_InPlayEventsScoreAndTime text-[6px] xs:text-[9px] font-medium w-full text-center">

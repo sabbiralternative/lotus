@@ -75,11 +75,8 @@ const Footer = () => {
         </div>
       )} */}
       <div id="footer" className="w-full ">
-        <div className="pr-3 pl-3 mt-1 w-full  md:pr-0 mb:pb-0 md:pl-0">
-          <div
-            id="homeFooter"
-            className="pt-5 w-full bg-black gap-2 rounded-xl md:rounded-none"
-          >
+        <div className="mt-1 w-full  md:pr-0 mb:pb-0 md:pl-0">
+          <div id="homeFooter" className="pt-5 w-full bg-black gap-2">
             <div className="flex w-full pb-[18px] items-center gap-x-[11px]  justify-center">
               {socialLink?.whatsapplink || socialLink?.branchWhatsapplink ? (
                 <a

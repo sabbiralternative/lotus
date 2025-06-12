@@ -329,7 +329,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
                               >
                                 {runner?.back?.[2]?.price || "-"}
                               </span>
@@ -337,7 +337,7 @@ const Bookmaker = ({ bookmaker }) => {
                                 id="oddBtnSize"
                                 className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                               >
-                                <span className="w-max break-all truncate text-[9px]">
+                                <span className="w-max break-all truncate text-[9px] font-[300]">
                                   {runner?.back?.[2]?.size}
                                 </span>
                               </span>
@@ -363,7 +363,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
                               >
                                 {runner?.back?.[1]?.price || "-"}
                               </span>
@@ -371,7 +371,7 @@ const Bookmaker = ({ bookmaker }) => {
                                 id="oddBtnSize"
                                 className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                               >
-                                <span className="w-max break-all truncate text-[9px]">
+                                <span className="w-max break-all truncate text-[9px] font-[300]">
                                   {runner?.back?.[1]?.size}
                                 </span>
                               </span>
@@ -397,7 +397,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
                               >
                                 {runner?.back?.[0]?.price || "-"}
                               </span>
@@ -405,7 +405,7 @@ const Bookmaker = ({ bookmaker }) => {
                                 id="oddBtnSize"
                                 className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                               >
-                                <span className="w-max break-all truncate text-[9px]">
+                                <span className="w-max break-all truncate text-[9px] font-[300]">
                                   {runner?.back?.[0]?.size}
                                 </span>
                               </span>
@@ -431,7 +431,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
                               >
                                 {runner?.lay?.[0]?.price || "-"}
                               </span>
@@ -439,7 +439,7 @@ const Bookmaker = ({ bookmaker }) => {
                                 id="oddBtnSize"
                                 className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                               >
-                                <span className="w-max break-all truncate text-[9px]">
+                                <span className="w-max break-all truncate text-[9px] font-[300]">
                                   {runner?.lay?.[0]?.size}
                                 </span>
                               </span>
@@ -465,7 +465,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
                               >
                                 {runner?.lay?.[1]?.price || "-"}
                               </span>
@@ -473,7 +473,7 @@ const Bookmaker = ({ bookmaker }) => {
                                 id="oddBtnSize"
                                 className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                               >
-                                <span className="w-max break-all truncate text-[9px]">
+                                <span className="w-max break-all truncate text-[9px] font-[300]">
                                   {runner?.lay?.[1]?.size}
                                 </span>
                               </span>
@@ -499,7 +499,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-semibold"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
                               >
                                 {runner?.lay?.[2]?.price || "-"}
                               </span>
@@ -507,7 +507,7 @@ const Bookmaker = ({ bookmaker }) => {
                                 id="oddBtnSize"
                                 className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-[10px] text-text_OddValue leading-3 text-center whitespace-normal font-normal"
                               >
-                                <span className="w-max break-all truncate text-[9px]">
+                                <span className="w-max break-all truncate text-[9px] font-[300]">
                                   {runner?.lay?.[2]?.size}
                                 </span>
                               </span>

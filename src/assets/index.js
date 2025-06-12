@@ -60,8 +60,16 @@ import slot_quick_bg from "./images/slot-quick-bg.png";
 import sportsbook_quick_bg from "./images/sportsbook-quick-bg.png";
 import userIcon from "./images/toolbar-user-icon.c398950b.svg";
 import election from "./images/election-icon.1be45f54.svg";
+import aura from "./images/aurai.svg";
+import multiicon from "./images/multiicon.png";
+import fishingicon from "./images/fishingicon.png";
+import evoicon from "./images/evoicon.svg";
 
 export default {
+  evoicon,
+  fishingicon,
+  multiicon,
+  aura,
   election,
   userIcon,
   aura_bg,
