@@ -26,6 +26,7 @@ import ReferralStatement from "../pages/ReferralStatement/ReferralStatement.jsx"
 import HorseRacing from "../pages/HorseRacing/HorseRacing.jsx";
 import GreyhoundRacing from "../pages/GreyhoundRacing/GreyhoundRacing.jsx";
 import MyBankDetails from "../pages/MyBankDetails/MyBankDetails.jsx";
+import IndianCardGames from "../pages/IndianCardGames/IndianCardGames.jsx";
 
 const MainRouter = () => {
   const windowWidth = useWindowWidth();
@@ -123,6 +124,10 @@ const MainRouter = () => {
           {
             path: "/my-bank-details",
             element: <MyBankDetails />,
+          },
+          {
+            path: "/indian-card-games",
+            element: <IndianCardGames />,
           },
           {
             path: "/apk",

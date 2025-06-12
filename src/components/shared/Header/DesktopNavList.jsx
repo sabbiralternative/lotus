@@ -79,7 +79,14 @@ const DesktopNavList = () => {
             {languageValue(valueByLanguage, LanguageKey.GREYHOUND)}
           </span>
         </button>
-
+        <button
+          onClick={() => {
+            navigate("/indian-card-games");
+          }}
+          className="text-xs cursor-pointer uppercase    rounded-full text-nowrap whitespace-nowrap font-semibold   w-max px-3  py-1 text-text_HeaderDeskNavMenu  list-item relative"
+        >
+          <span className="font font-lato text-[12px]">Indian Card Games</span>
+        </button>
         <button
           onClick={() => {
             navigate("/live-casino");
