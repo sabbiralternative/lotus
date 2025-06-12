@@ -416,7 +416,7 @@ const Fancy = ({ fancy }) => {
                           >
                             <span
                               id="oddBtnPrice"
-                              className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
+                              className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[300]"
                             >
                               {games?.runners?.[0]?.back?.[0]?.line}
                             </span>

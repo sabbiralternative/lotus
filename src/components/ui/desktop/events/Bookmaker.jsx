@@ -329,7 +329,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[300]"
                               >
                                 {runner?.back?.[2]?.price || "-"}
                               </span>
@@ -363,7 +363,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[300]"
                               >
                                 {runner?.back?.[1]?.price || "-"}
                               </span>
@@ -397,7 +397,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[300]"
                               >
                                 {runner?.back?.[0]?.price || "-"}
                               </span>
@@ -431,7 +431,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[300]"
                               >
                                 {runner?.lay?.[0]?.price || "-"}
                               </span>
@@ -465,7 +465,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[300]"
                               >
                                 {runner?.lay?.[1]?.price || "-"}
                               </span>
@@ -499,7 +499,7 @@ const Bookmaker = ({ bookmaker }) => {
                             >
                               <span
                                 id="oddBtnPrice"
-                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[400]"
+                                className="relative z-10 transition-all ease-in-out duration-300 origin-center flex items-center justify-center w-full text-text_OddValue leading-5 text-[12px] font-[300]"
                               >
                                 {runner?.lay?.[2]?.price || "-"}
                               </span>
